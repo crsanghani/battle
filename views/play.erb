@@ -1,5 +1,7 @@
-<%= @game.player_1.name %> vs. <%= @game.player_2.name %>
-
-<%= @game.player_2.name %>: 60HP
-
-<a href='/attack'>Attack</a>
+<h1><%= @game.player_1.name %> vs. <%= @game.player_2.name %></h1>
+  <strong>
+    <br><%= @game.player_1.name %>: <%= @game.player_1.hit_points%>HP
+    <br><%= @game.player_2.name %>: <%= @game.player_2.hit_points%>HP
+    <br><%= @game.current_turn.name %>'s turn
+  </strong>
+  <span style='background-color: red; border: none;color: white;padding: 15px 32px;text-align: center;display: inline-block;font-size: 16px;border-radius: 25px;'><a href='/attack' style="text-decoration:none!important;color:white;">Attack!</a></span>

@@ -1,3 +1,5 @@
-<%= @game.player_1.name %> attacked <%= @game.player_2.name %>
-
-<%= @game.player_2.name %>: 50HP
+<h1><%= @game.opponent.name %> <i style="color:red;">attacked</i> <%= @game.current_turn.name %></h1>
+<strong>
+  <br><%= @game.current_turn.name %>: <%= @game.current_turn.hit_points%>HP
+</stong>
+<span style='background-color: red; border: none;color: white;padding: 15px 32px;text-align: center;display: inline-block;font-size: 16px;border-radius: 25px;'><a href='/play' style="text-decoration:none!important;color:white;">OK</a></span>
