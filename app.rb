@@ -25,13 +25,12 @@ class Battle < Sinatra::Base
   end
 
   post '/attack' do
-    @game = $game
-    Attack.run(@game.opponent)
-    if @game.game_over?
-      redirect '/gameover'
-    else
-      redirect '/attack'
-    end
+    Attack.run($game.opponent($game.current_turn))
+      if $game.game_over?
+        redirect '/gameover'
+      else
+        redirect '/attack'
+      end
   end
 
   get '/gameover' do

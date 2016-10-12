@@ -1,5 +1,4 @@
-require_relative 'player'
-
+require 'require_all'
 class Game
 
   attr_reader :current_turn

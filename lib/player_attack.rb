@@ -1,3 +1,4 @@
+require 'require_all'
 class Attack
 
   def initialize(player)
