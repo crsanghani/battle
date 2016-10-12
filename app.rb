@@ -1,7 +1,6 @@
 require 'sinatra/base'
 require 'require_all'
 require_all 'lib'
-
 class Battle < Sinatra::Base
 
   use Rack::Session::Cookie,:key => 'rack.session',
@@ -25,7 +24,7 @@ class Battle < Sinatra::Base
   end
 
   post '/attack' do
-    Attack.run($game.opponent($game.current_turn))
+    Attack.run($game.opponent)
       if $game.game_over?
         redirect '/gameover'
       else
@@ -38,7 +37,7 @@ class Battle < Sinatra::Base
     erb :gameover
   end
 
-  post '/switch-turns' do
+  get '/switch-turns' do
     @game = $game
     @game.switch_turns
     redirect('/play')
