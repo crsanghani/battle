@@ -8,13 +8,6 @@ let(:player_1)    { double(:player, hit_points: 60) }
 let(:player_2)    { double(:player, hit_points: 60) }
 let(:dead_player) { double(:player, hit_points: 0)  }
 
-  describe '#attack' do
-    it 'damages the player' do
-      expect(player_2).to receive(:receive_damage)
-      game.attack(player_2)
-    end
-  end
-
   describe '#player_1' do
     it 'retrives the first player' do
       expect(game.player_1).to eq player_1

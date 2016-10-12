@@ -1,3 +1,5 @@
+require_relative 'player'
+
 class Game
 
   attr_reader :current_turn
@@ -8,16 +10,16 @@ class Game
   end
 
   def player_1
-    @players[0]
+    @players.first
   end
 
   def player_2
-    @players[1]
+    @players.last
   end
 
-  def attack(player)
-   player.receive_damage
-  end
+  # def attack(player)
+  #  player.receive_damage
+  # end
 
   def switch_turns
    @current_turn = opponent_of(current_turn)
@@ -36,6 +38,8 @@ class Game
   end
 
   private
+
+  attr_reader :players
 
   def losing_players
     @players.select {|player| player.hit_points <= 0}
