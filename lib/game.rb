@@ -18,6 +18,10 @@ class Game
     @players.last
   end
 
+  def opponent
+    opponent_of(@current_turn)
+  end
+
   def attack(opponent)
     opponent.reduce_health
   end
