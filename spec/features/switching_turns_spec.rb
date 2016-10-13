@@ -1,4 +1,4 @@
-require_relative 'welpers'
+# require_relative 'welpers'
 require 'spec_helper'
 
 feature 'Switching turns' do
