@@ -4,7 +4,7 @@ require './lib/game'
 
 class Battle < Sinatra::Base
 
-  enable :sessions
+  # enable :sessions
 
   get '/' do
     erb :index
@@ -30,7 +30,7 @@ class Battle < Sinatra::Base
 
   post '/switch_turns' do
     $game.switch_turns
-    redirect '/play' 
+    redirect '/play'
   end
 
   # start the server if ruby file executed directly
