@@ -1,9 +1,9 @@
-<h1><%= @new_game.player_1.name %> vs. <%= @new_game.player_2.name %></h1>
+<h1><%= @game.player_1.name %> vs. <%= @game.player_2.name %></h1>
 
-<h2><%= @new_game.current_turn.name %>'s turn </h2>
+<h2><%= @game.current_turn.name %>'s turn </h2>
 
-<h2><%=@new_game.player_1.name %> HP: <%= @new_game.player_1.health %></h2>
-<h2><%=@new_game.player_2.name %> HP: <%= @new_game.player_2.health %></h2>
+<h2><%=@game.player_1.name %> HP: <%= @game.player_1.health %></h2>
+<h2><%=@game.player_2.name %> HP: <%= @game.player_2.health %></h2>
 
 
 <form action="/aftermath" method="post">
