@@ -40,7 +40,7 @@ class Game
 
 private
 
-attr_reader :players
+  attr_reader :players
   def opponent_of(the_player)
     @opponent = @players.select{|player| player != the_player}.first
   end

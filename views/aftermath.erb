@@ -1,5 +1,5 @@
 <% if @new_game.current_turn == @new_game.player_1 %>
-<h2><%= @new_game.player_1.name%> has attacked <%=@new_game.player_2.name%> </h2>
+<h2><%= @new_game.player_1.name%> has attacked <%=@new_game.opponent.name%> </h2>
 <h2><%= @new_game.player_2.name %>'s turn next</h2>
 <% else %>
 <h2><%= @new_game.player_2.name %> has attacked <%=@new_game.player_1.name%></h2>

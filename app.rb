@@ -22,10 +22,24 @@ class Battle < Sinatra::Base
     erb(:play)
   end
 
-  get '/aftermath' do
+  post '/aftermath' do
     @new_game = $game
     @new_game.attack(@new_game.opponent)
+      if @new_game.game_over?
+        redirect '/game_over'
+      else
+        redirect '/aftermath'
+      end
+  end
+
+  get '/aftermath' do
+    @new_game = $game
     erb(:aftermath)
+  end
+
+  get '/game_over' do
+    @new_game = $game
+    erb(:game_over)
   end
 
   post '/switch_turns' do
