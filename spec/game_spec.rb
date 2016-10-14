@@ -3,11 +3,11 @@ require 'game'
 
 
 describe Game do
-  subject(:game)  { described_class.new(snuggles, amaal) }
+  subject(:game)          { described_class.new(snuggles, amaal) }
   subject(:finished_game) { described_class.new(dead_player, amaal) }
-  let(:snuggles)  { double :player, hit_points: 60  }
-  let(:amaal)     { double :player, hit_points: 60 }
-  let(:dead_player) { double :player, hit_points: 0}
+  let(:snuggles)          { double :player, hit_points: 60  }
+  let(:amaal)             { double :player, hit_points: 60 }
+  let(:dead_player)       { double :player, hit_points: 0}
 
   describe '#player_1' do
     it 'retrieves the first player' do

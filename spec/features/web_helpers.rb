@@ -5,9 +5,9 @@ def sign_in_and_play
   click_button 'Submit'
 end
 
-
 def attack_to_zero
   11.times do
+    allow(Game.instance.opponent).to receive(:random_damage).and_return(10)
     click_link 'Attack'
     click_button 'OK'
   end
